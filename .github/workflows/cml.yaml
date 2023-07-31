@@ -43,4 +43,5 @@ jobs:
           dvc plots diff --target loss.csv --show-vega master > vega.json
           vl2png vega.json -s 1.3 > vega.png
           echo '![](./vega.png)' >> report.md
+          cml ci
           cml comment create --publish-url=https://asset.cml.dev report.md
