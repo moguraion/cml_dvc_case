@@ -28,7 +28,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           PUBLISH_URL: ${{ secrets.PUBLISH_URL }}
         run: |
-          echo "$PUBLISH_URL"
+          echo $PUBLISH_URL
           cml ci
           cml comment update --publish-url=$PUBLISH_URL --log=debug --target=commit --watch --watermark-title='report' report.md &
 
